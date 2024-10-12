@@ -143,6 +143,7 @@ The application uses environment variables for configuration. Copy the example `
    PROXYCURL_API_KEY=your_proxycurl_api_key
    SECRET_KEY=your_flask_secret_key
    ```
+   Note: the flask secret key is just any random string. make up whatever you want.
 
 3. **Other Configurations**:
 
