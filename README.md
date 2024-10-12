@@ -45,8 +45,8 @@ Read on Substack: [https://magneticgrowth.substack.com//](https://magneticgrowth
 1. **Clone the Repository**:
 
    ```bash
-   git clone https://github.com/MagneticStudio/Contact-Search-Public
-   cd Contact-Search-Public
+   git clone https://github.com/MagneticStudio/LinkedIn-AI-Search-Agent
+   cd LinkedIn-AI-Search-Agent
    ```
 
 2. **Create a Virtual Environment** (optional but recommended):
