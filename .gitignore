@@ -1,3 +1,10 @@
+# Personal files:
+embeddings.index
+contacts.db
+embeddings.index.meta
+embeddings.index.chunks
+uploads/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
