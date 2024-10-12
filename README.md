@@ -45,8 +45,8 @@ Read on Substack: [https://magneticgrowth.substack.com//](https://magneticgrowth
 1. **Clone the Repository**:
 
    ```bash
-   git clone https://github.com/yourusername/ai-contacts-search-assistant.git
-   cd ai-contacts-search-assistant
+   git clone https://github.com/MagneticStudio/Contact-Search-Public
+   cd Contact-Search-Public
    ```
 
 2. **Create a Virtual Environment** (optional but recommended):
@@ -194,8 +194,6 @@ Contributions are welcome! Please follow these steps:
    Go to your forked repository and click the "New Pull Request" button.
 
 ## License
-
-   ## License
 
    This project is licensed under the GNU Affero General Public License v3.0. See the [LICENSE](LICENSE) file for details.
 
