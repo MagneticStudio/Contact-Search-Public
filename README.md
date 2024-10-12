@@ -131,21 +131,23 @@ The application uses environment variables for configuration. Copy the example `
 1. **Create a `.env` File**:
 
    ```bash
-   cp .env.example .env
+   cp sample.env .env
    ```
 
 2. **Set Your API Keys**:
 
+   There is a sample.env file you can use for reference. Either way, just make sure you have a .env file.
+   
    Open `.env` and set your OpenAI and Proxycurl API keys:
 
    ```env
    OPENAI_API_KEY=your_openai_api_key
    PROXYCURL_API_KEY=your_proxycurl_api_key
-   SECRET_KEY=your_flask_secret_key
+   
    ```
-   Note: the flask secret key is just any random string. make up whatever you want.
+   You can also set your key for langchain / langsmith to audit how the agent performs.
 
-3. **Other Configurations**:
+4. **Other Configurations**:
 
    Adjust other settings as needed, such as database name, embedding dimensions, and file paths.
 
