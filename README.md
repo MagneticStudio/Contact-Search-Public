@@ -85,8 +85,11 @@ The data ingestion process involves reading your LinkedIn connections from a CSV
    ```
 
    - This will start a Flask web app where you can upload your `Connections.csv` file.
+   - You do not need to remove the headers from the csv or reformat it in any way
    - The application will process each LinkedIn URL, fetch detailed profiles using the Proxycurl API, and store them in the local database.
    - You can watch the progress in the terminal. You can let it run in background. When complete, you'll see a table of contacts in the browser.
+   - The app only needs to be run once per import. You can use the AI Agent as many times as you want thereafter.  You'll also see a contacts.db and several .index embeddings files in your directory.
+   - You can provide it with updated .csv files and it will only append new entries not previously processed.
 
 ### Running the AI Agent
 
