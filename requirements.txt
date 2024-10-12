@@ -1,0 +1,14 @@
+Flask
+python-dotenv
+pandas
+requests
+langchain
+openai
+langchain-openai
+sentence_transformers
+rapidfuzz
+annoy
+langgraph
+langsmith
+faiss-cpu
+graphviz

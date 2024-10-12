@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Confirmation</title>
+    <style>
+        .data {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .data th, .data td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+            vertical-align: top;
+        }
+        .profile-pic {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+        .preformatted {
+            white-space: pre-wrap; /* CSS3 */
+            white-space: -moz-pre-wrap; /* Firefox */
+            white-space: -pre-wrap; /* Opera <7 */
+            white-space: -o-pre-wrap; /* Opera 7 */
+            word-wrap: break-word; /* IE */
+        }
+        #loading {
+            display: none;
+            color: #888;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <h1>CSV File Processed Successfully</h1>
+    <p>Your CSV file has been processed and matches the expected format.</p>
+    
+    <div id="loading">Processing your query...</div>
+    
+    <!-- Display AI-generated response -->
+    <div id="ai_response">
+        {% if ai_response %}
+        <h2>AI Response:</h2>
+        <p>{{ ai_response }}</p>
+        {% endif %}
+    </div>
+    
+    <table class="data">
+        <thead>
+            <tr>
+                <th>Profile Picture</th>
+                <th>Full Name</th>
+                <th>Occupation</th>
+                <th>Headline</th>
+                <th>Summary</th>
+                <th>Location</th>
+                <th>Experience</th>
+                <th>Education</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for person in data %}
+            <tr>
+                <td>
+                    {% if person.profile_pic_url %}
+                    <img src="{{ person.profile_pic_url }}" alt="Profile Picture" class="profile-pic">
+                    {% else %}
+                    N/A
+                    {% endif %}
+                </td>
+                <td>{{ person.full_name }}</td>
+                <td>{{ person.occupation }}</td>
+                <td>{{ person.headline }}</td>
+                <td class="preformatted">{{ person.summary }}</td>
+                <td>{{ person.location }}</td>
+                <td class="preformatted">
+                    {% for exp in person.experience_list %}
+                    <strong>Company:</strong> {{ exp.Company }}<br>
+                    <strong>Title:</strong> {{ exp.Title }}<br>
+                    <strong>Description:</strong> {{ exp.Description }}<br>
+                    <strong>Start Date:</strong> {{ exp['Start Date'] }}<br>
+                    <strong>End Date:</strong> {{ exp['End Date'] }}<br><br>
+                    {% endfor %}
+                </td>
+                <td class="preformatted">
+                    {% for edu in person.education_list %}
+                    <strong>School:</strong> {{ edu.School }}<br>
+                    <strong>Field of Study:</strong> {{ edu['Field of Study'] }}<br>
+                    <strong>Degree:</strong> {{ edu.Degree }}<br>
+                    <strong>Description:</strong> {{ edu.Description }}<br><br>
+                    {% endfor %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    
+    <script>
+        function showLoading() {
+            document.getElementById('loading').style.display = 'block';
+            document.getElementById('ai_response').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
